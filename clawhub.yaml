@@ -1,0 +1,114 @@
+# ClawHub Skill Manifest
+# 用于 OpenClaw ClawHub 技能发现和安装
+
+name: ai-agent-security-toolkit
+version: 1.0.0
+description: AI Agent Security Toolkit - Prompt Injection 防御和安全审计工具
+author: Roger <jkRoger9999@gmail.com>
+license: MIT
+
+# 技能分类
+category: security
+tags:
+  - ai-security
+  - prompt-injection
+  - openclaw
+  - security-audit
+  - llm-security
+
+# 兼容性
+compatibility:
+  openclaw: ">=1.0.0"
+  nodejs: ">=14.0.0"
+
+# 仓库信息
+repository:
+  type: git
+  url: https://github.com/1927124377/ai-agent-security.git
+  homepage: https://github.com/1927124377/ai-agent-security
+
+# 安装方式
+installation:
+  type: git
+  commands:
+    - git clone https://github.com/1927124377/ai-agent-security.git
+    - cd ai-agent-security
+    - node scripts/validate-input.js --test
+
+# 核心功能
+features:
+  - name: 输入验证
+    script: scripts/validate-input.js
+    description: 检测并拒绝 Prompt Injection 攻击
+    detection_types:
+      - 直接注入
+      - 间接注入
+      - 角色扮演攻击
+      - 凭证探测
+      - 敏感操作
+      - 混淆攻击
+      - 外部内容注入
+
+  - name: 安全审计
+    script: scripts/audit-skills-security.js
+    description: 扫描 skills/ 目录检测恶意代码
+    patterns:
+      - eval()
+      - Function 构造函数
+      - child_process.exec
+      - Base64 解码
+      - 凭证访问
+      - postinstall 钩子
+
+  - name: 凭证保护
+    script: scripts/check-credentials-permissions.js
+    description: 检查并修复 .credentials/ 权限
+    auto_fix: true
+
+# 使用示例
+usage_examples:
+  - title: 验证用户输入
+    command: node scripts/validate-input.js "你好，帮我查天气"
+    description: 检查输入是否包含攻击
+
+  - title: 安全审计
+    command: node scripts/audit-skills-security.js .
+    description: 扫描当前目录的技能文件
+
+  - title: 凭证检查
+    command: node scripts/check-credentials-permissions.js --fix
+    description: 检查并自动修复凭证权限
+
+# 文档
+documentation:
+  readme: README.md
+  integration: docs/INTEGRATION.md
+  attack_patterns: docs/ATTACK-PATTERNS.md
+  best_practices: docs/SECURITY-BEST-PRACTICES.md
+  contributing: CONTRIBUTING.md
+
+# 测试
+testing:
+  framework: jest
+  test_files:
+    - tests/validate-input.test.js
+  total_tests: 15
+
+# 攻击样本库
+samples:
+  location: samples/prompt-injection/README.md
+  total: 27
+  categories: 8
+
+# 社区
+community:
+  discord: https://discord.gg/clawd
+  issues: https://github.com/1927124377/ai-agent-security/issues
+  contributing: CONTRIBUTING.md
+
+# 变更日志
+changelog: CHANGELOG.md
+
+# 创建和更新时间
+created: 2026-03-14
+updated: 2026-03-14

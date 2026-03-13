@@ -1,0 +1,157 @@
+{
+  "name": "ai-agent-security-toolkit",
+  "version": "1.0.0",
+  "description": "AI Agent Security Toolkit - Prompt Injection defense and security audit tools for OpenClaw and other AI agents",
+  "author": "Roger <jkRoger9999@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/1927124377/ai-agent-security",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1927124377/ai-agent-security.git"
+  },
+  "keywords": [
+    "ai-security",
+    "prompt-injection",
+    "openclaw",
+    "ai-agent",
+    "security",
+    "llm-security",
+    "owasp-llm"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "openclaw": ">=1.0.0"
+  },
+  "scripts": {
+    "test": "node scripts/validate-input.js --test",
+    "audit": "node scripts/audit-skills-security.js",
+    "check-creds": "node scripts/check-credentials-permissions.js"
+  },
+  "bin": {
+    "ai-security-check": "scripts/validate-input.js",
+    "ai-security-audit": "scripts/audit-skills-security.js",
+    "ai-security-creds": "scripts/check-credentials-permissions.js"
+  },
+  "main": "scripts/validate-input.js",
+  "files": [
+    "scripts/",
+    "docs/",
+    "samples/",
+    "tests/",
+    "README.md",
+    "LICENSE"
+  ],
+  "installation": {
+    "method": "git",
+    "commands": [
+      "git clone https://github.com/1927124377/ai-agent-security.git",
+      "cd ai-agent-security",
+      "node scripts/validate-input.js --test"
+    ],
+    "alternative": {
+      "method": "npm",
+      "command": "npm install ai-agent-security-toolkit",
+      "status": "planned"
+    }
+  },
+  "usage": {
+    "input_validation": {
+      "description": "Validate user input for Prompt Injection attacks",
+      "command": "node scripts/validate-input.js \"user input\"",
+      "example": "node scripts/validate-input.js \"你好，帮我查天气\""
+    },
+    "security_audit": {
+      "description": "Scan skills/ directory for malicious code patterns",
+      "command": "node scripts/audit-skills-security.js [directory]",
+      "example": "node scripts/audit-skills-security.js ."
+    },
+    "credential_check": {
+      "description": "Check .credentials/ directory file permissions",
+      "command": "node scripts/check-credentials-permissions.js [--fix]",
+      "example": "node scripts/check-credentials-permissions.js --fix"
+    }
+  },
+  "integration": {
+    "openclaw": {
+      "compatible": true,
+      "min_version": "1.0.0",
+      "instructions": "Copy scripts/ to your workspace and require in message handlers"
+    },
+    "claude_code": {
+      "compatible": true,
+      "instructions": "Use as external security validation tool"
+    }
+  },
+  "features": [
+    {
+      "name": "Input Validation",
+      "description": "Detect and reject Prompt Injection attacks",
+      "script": "scripts/validate-input.js",
+      "detection_types": [
+        "direct_injection",
+        "indirect_injection",
+        "roleplay_attack",
+        "credential_probe",
+        "sensitive_operation",
+        "obfuscation",
+        "external_content"
+      ],
+      "risk_scoring": {
+        "reject_threshold": 50,
+        "warn_threshold": 30,
+        "allow_threshold": 30
+      }
+    },
+    {
+      "name": "Skills Security Audit",
+      "description": "Scan for malicious code patterns in skills/",
+      "script": "scripts/audit-skills-security.js",
+      "detection_patterns": [
+        "eval()",
+        "Function constructor",
+        "child_process.exec",
+        "base64_decode",
+        "credential_access",
+        "postinstall_hooks"
+      ]
+    },
+    {
+      "name": "Credential Permissions",
+      "description": "Ensure .credentials/ files have 600 permissions",
+      "script": "scripts/check-credentials-permissions.js",
+      "auto_fix": true
+    }
+  ],
+  "attack_samples": {
+    "total": 27,
+    "categories": 8,
+    "location": "samples/prompt-injection/README.md"
+  },
+  "documentation": {
+    "readme": "README.md",
+    "integration_guide": "docs/INTEGRATION.md",
+    "attack_patterns": "docs/ATTACK-PATTERNS.md",
+    "best_practices": "docs/SECURITY-BEST-PRACTICES.md",
+    "release_guide": "docs/RELEASE-GUIDE.md"
+  },
+  "testing": {
+    "framework": "jest",
+    "test_files": [
+      "tests/validate-input.test.js"
+    ],
+    "total_tests": 15
+  },
+  "security": {
+    "vulnerability_reporting": "security@your-email.com",
+    "known_issues": [],
+    "last_audit": "2026-03-14"
+  },
+  "community": {
+    "discord": "https://discord.gg/clawd",
+    "issues": "https://github.com/1927124377/ai-agent-security/issues",
+    "contributing": "CONTRIBUTING.md"
+  },
+  "changelog": "CHANGELOG.md",
+  "created": "2026-03-14",
+  "updated": "2026-03-14"
+}
