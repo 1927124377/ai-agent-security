@@ -4,6 +4,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-blue)](https://openclaw.ai)
+[![Stars](https://img.shields.io/github/stars/1927124377/ai-agent-security?style=flat)](https://github.com/1927124377/ai-agent-security/stargazers)
+[![Issues](https://img.shields.io/github/issues/1927124377/ai-agent-security)](https://github.com/1927124377/ai-agent-security/issues)
 
 ---
 
@@ -44,7 +46,7 @@ AI 代理面临的安全威胁：
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/ai-agent-security.git
+git clone https://github.com/1927124377/ai-agent-security.git
 cd ai-agent-security
 
 # 复制脚本到你的项目
@@ -258,8 +260,9 @@ MIT License - 见 [LICENSE](LICENSE) 文件
 
 ## 📬 联系方式
 
-- GitHub Issues: 报告问题或请求功能
-- Discord: [OpenClaw Community](https://discord.gg/clawd)
+- 🐛 GitHub Issues: [报告问题](https://github.com/1927124377/ai-agent-security/issues)
+- 💬 Discord: [OpenClaw Community](https://discord.gg/clawd)
+- 📧 邮件：jkRoger9999@gmail.com
 
 ---
 
