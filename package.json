@@ -1,0 +1,38 @@
+{
+  "name": "ai-agent-security-toolkit",
+  "version": "1.0.0",
+  "description": "AI Agent Security Toolkit - Prompt Injection defense and security audit tools for OpenClaw and other AI agents",
+  "main": "scripts/validate-input.js",
+  "bin": {
+    "ai-security-check": "scripts/validate-input.js",
+    "ai-security-audit": "scripts/audit-skills-security.js",
+    "ai-security-creds": "scripts/check-credentials-permissions.js"
+  },
+  "scripts": {
+    "test": "node scripts/validate-input.js --test",
+    "audit": "node scripts/audit-skills-security.js",
+    "check-creds": "node scripts/check-credentials-permissions.js"
+  },
+  "keywords": [
+    "ai-security",
+    "prompt-injection",
+    "openclaw",
+    "ai-agent",
+    "security",
+    "llm-security",
+    "owasp-llm"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/ai-agent-security-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/ai-agent-security-toolkit/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/ai-agent-security-toolkit#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
